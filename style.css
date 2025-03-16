@@ -1,0 +1,32 @@
+form
+{
+    background-color: blanchedalmond;
+    margin-top: 10%;
+    margin-right: 40%;
+    margin-left: 40%;
+    border-radius: 3px;
+}
+.botonEnvio
+{
+    margin-left: 39%;
+    margin-bottom: 10%;
+}
+input
+{
+    margin-left:18%;
+    margin-top: 13%;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 10px;
+    border: 2px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s; 
+}
+.titulo
+{
+    text-align: center;
+    font-style: oblique;
+    font-variant: small-caps;
+    text-decoration: underline;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
