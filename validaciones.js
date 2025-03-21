@@ -1,7 +1,3 @@
-let validarnombreT = false;
-let validarEmailT = false;
-let validarcontraseñaT = false;
-let repitecontraseñaT = false;
 
 function validarnombre() 
 {
@@ -11,13 +7,13 @@ function validarnombre()
     
 
     if (name.length < 3)
-    {
+    {        
         mensajeError.innerHTML = "El nombre debe tener 3 caracteres o mas";
+        return false;
     }
     else{
         mensajeError.innerHTML="";
-        validarnombreT = true;
-        console.log(validarnombreT)
+        return true;
     }
 }
 
@@ -30,13 +26,12 @@ function validarEmail() {
     if (!email.match(regex)) 
     {
         mensajeErrorEmail.innerHTML = "El correo electrónico ingresado no es valido";
-        
+        return false;
     }
     else
     {
         mensajeErrorEmail.innerHTML = "";
-        validarEmailT = true;
-        console.log(validarEmailT)
+       return true;
     }
      
 }
@@ -52,12 +47,12 @@ function validarContraseña()
 
     if (contraseña.length < 8 || !regex.test(contraseña) || !regexLetra.test(contraseña) )
     {
-        mensajeErrorContraseña.innerHTML = "La contraseña no es valida";
+        mensajeErrorContraseña.innerHTML = "La contraseña no es valida";;
+        return false;
     }
     else{
         mensajeErrorContraseña.innerHTML="";
-        validarcontraseñaT = true;
-        console.log(validarcontraseñaT)
+        return true;
     }
 }
 
@@ -70,31 +65,34 @@ function repiteContraseña()
     if(validoContraseña != contraseña)
     {
         mensajeErrorRepite.innerHTML = "La contraseña debe ser igual a la ingresada previamente";
-
+        return false;
     }
     else
     {
         mensajeErrorRepite.innerHTML = "";
-        repitecontraseñaT = true;
-        console.log(repitecontraseñaT)
+        return true;
     }
 
 }
 
-document.getElementById("envio").addEventListener("click", validarEnvio(validarnombreT , validarEmailT , validarcontraseñaT , repitecontraseñaT));
-function validarEnvio(event , validarnombreT , validarEmailT , validarcontraseñaT , repitecontraseñaT)
-{
-    console.log(validarnombreT)
+let mensajFinal = document.getElementById("mensajFinal");
 
-    if(!(validarnombreT == true && validarEmailT == true && validarcontraseñaT == true && repitecontraseñaT == true))
-    {
-        alert("Por favor, complete todos los campos correctamente.");   
+document.getElementById("envio").addEventListener("submit", function(event) {
+    event.preventDefault(); 
+
+    if(!validarnombre() || !validarEmail() || !validarContraseña() || !repiteContraseña()) {
+        mensajFinal.innerHTML = "Por favor complete todos los campos correctamente";
     }
-    else
+    else 
     {
-        alert("Se envio el formulario correctamente.");
+        mensajFinal.innerHTML = "Formulario enviado correctamente";
     }
-}
+});
+
+
+
+
+
 
 
 
