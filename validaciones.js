@@ -77,7 +77,7 @@ function repiteContraseña()
 
 let mensajFinal = document.getElementById("mensajFinal");
 
-document.getElementById("envio").addEventListener("submit", function(event) {
+document.getElementById("form").addEventListener("submit", function(event) {
     event.preventDefault(); 
 
     if(!validarnombre() || !validarEmail() || !validarContraseña() || !repiteContraseña()) {
