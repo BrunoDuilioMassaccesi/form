@@ -8,9 +8,8 @@
 </head>
 <body>
 
+    <form id="form" > 
 
-
-    <form> 
         <h1 class="titulo">Registro</h1>
         <input id="name" type="text" class="nombreCompleto" placeholder="Nombre Completo" onkeyup=" validarnombre()">
         <p id="mensajeError" class="error" style="color: red;"></p>
@@ -18,16 +17,10 @@
         <p id="mensajeErrorEmail" class="error" style="color: red;"></p>
         <input id="contraseña" type="password" class="contraseña" placeholder="Contraseña" onkeyup="validarContraseña()">
         <p id="mensajeErrorContraseña" class="error" style="color: red;"></p>
-        <input type="password" class="validoCOntraseña" placeholder="Confirmar Contraseña">
-        <p id="mensajeError" class="error" style="color: red;"></p>
+        <input type="password" id="validoContraseña" class="validoContraseña" placeholder="Confirmar Contraseña" onkeyup="repiteContraseña()">
+        <p id="mensajeErrorRepite" class="error" style="color: red;"></p>
         <input id="envio" type="submit" class="botonEnvio" placeholder="Enviar">
     </form>
-
-
-    
-    
-
-
 
     <script src="validaciones.js"></script>
 </body>
